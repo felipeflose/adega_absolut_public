@@ -1,0 +1,109 @@
+
+@{
+    ViewData["Title"] = "Diagramas";
+}
+
+<h3> Documentação</h3> 
+
+
+ <header> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Diagrama" asp-action="Index">Diagrama de Classes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Diagrama" asp-action="Telas">Telas do sistema </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Diagrama" asp-action="Banco">Scripts do banco de dados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Diagrama" asp-action="Docx">Documentação em Docx</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <h5> Banco de dados </h5>
+
+    <h6> 1 ) Tabela - Produtos </h6>
+  <div style="background-color: gray"> 
+      <pre><code>
+    create table Adega.Produtos (
+  IdProduto int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nome_produto VARCHAR (30),
+  valor double,
+  validade_produto date,
+  classificacao_idade VARCHAR (3),
+  categoria VARCHAR (30),
+  marca VARCHAR (30)            );
+</code></pre>
+  </div>
+  
+       <h6> 2 ) Tabela - Estoque </h6>
+  <div style="background-color: gray" > 
+      <pre><code>
+    create table Adega.Estoque (
+  IdEstoque int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  IdProduto int NOT NULL,
+  Tipo_movimentacao VARCHAR (6),
+  quantidade int,
+  data_movimentacao datetime,
+Constraint FK_Produto foreign key (IdProduto) references Adega.Produtos (IdProduto)
+                               );
+</code></pre>
+  </div>
+
+       <h6> 3 ) Tabela - Cliente </h6>
+  <div style="background-color: gray" > 
+      <pre><code>
+    create table Adega.Estoque (
+  idCliente int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(45) NOT NULL,
+  cpf VARCHAR(11),
+  dtNasc DATE,
+  telefone VARCHAR(20),
+  cep VARCHAR(8),
+  numCasa VARCHAR(10),
+  dtCadastro DATETIME          );
+</code></pre>
+  </div>
+
+
+<h6> 4 ) Tabela - Usuario </h6>
+  <div style="background-color: gray" > 
+      <pre><code>
+    create table Adega.Usuario (
+   nome nvarchar(45) NOT NULL ,
+   Login nvarchar(45) NOT NULL ,
+   Senha nvarchar(45) NOT NULL ,
+   Email NOT NULL              );
+</code></pre>
+  </div>
+
+<h6> 5 ) Tabela - Vendas </h6>
+  <div style="background-color: gray" > 
+      <pre><code>
+    create table Adega.vendas (
+   id_venda  int  NOT NULL PRIMARY KEY AUTO_INCREMENT ,
+   IdProduto int NOT NULL ,
+   quantidade float NOT NULL ,
+   tipo_pagamento varchar(45) NOT NULL,
+   data_pedido datetime,
+   valortotal float NOT NULL ,
+   IdCliente int
+                               );
+</code></pre>
+  </div>

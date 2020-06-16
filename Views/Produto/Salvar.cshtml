@@ -1,0 +1,56 @@
+@model IEnumerable<AppWeb.Models.ProdutoViewModel>
+@{
+    ViewData["Title"] = "Listar produtos";
+}
+
+<h2>Listar produtos</h2> 
+
+
+
+<a type = "button" class = "btn btn-primary"; href="~/Produtos/Criar">Criar</a>
+
+
+
+<hr/>
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">IdProduto</th>
+      <th scope="col">Produto</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Validade</th>
+      <th scope="col">Classificacao Idade</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Marca</th>
+    
+      <th scope="col">Editar | Deletar</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+     @foreach (var item in Model)
+     {
+        <tr>
+            <td>@item.IdProduto</td>
+            <td>@item.nome_produto</td>
+            <td>@item.valor</td>
+            <td>@item.validade_produto</td>
+            <td>@item.Classificacao_idade</td>
+            <td>@item.categoria</td>
+             <td>@item.marca</td>
+   
+            <td><a href = "~/Produtos/Editar/@item.IdProduto" > Editar </a> | <a href = "~/Produtos/Deletar/@item.IdProduto">Deletar </a></td>
+        
+        </tr>
+     }
+  </tbody>
+{
+
+	
+}
+
+
+</table>
+
+

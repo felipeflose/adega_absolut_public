@@ -1,0 +1,166 @@
+@model IEnumerable<AppWeb.Models.VendasViewModel>
+@{
+    ViewData["Title"] = "Finalizar pedidos";
+}
+
+<div class="container">
+<h2 class="text-center">Finalizar pedido</h2>
+
+  <div>
+    <br/>
+  </div>
+
+  <!-- #region começo Collapse-->  
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+          Forma de pagamento
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+
+            <div class="container">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="collapse" data-target="#demo">Cartão de crédito</button>
+            <div id="demo" class="collapse">
+                <hr />
+                
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="N° do cartão">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="CVV">
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Nome impresso no cartão">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Endereço da fatura">
+                        </div>
+                    </div>
+                </form>
+
+                <hr/>
+
+            </div>
+        </div>
+        
+        <hr/>
+
+            <div>
+                
+                <div class="container">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="collapse" data-target="#demo2">Cartão de debito</button>
+                    <div id="demo2" class="collapse">
+                        <hr />
+                    
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="N° do cartão">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="CVV">
+                            </div>
+                        </div>
+                <hr/>
+                        
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Nome impresso no cartão">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Endereço da fatura">
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+        Data da compra
+      </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+            @DateTime.Now.ToString("HH:mm dd/MM/yyyy")
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+            Itens pedidos
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+         <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Itens</th>
+            <th scope="col">Valor unitário</th>
+            <th scope="col">Valor total</th>
+        </tr>
+    </thead>
+    @* <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Quantidade</td>
+            <td>@item.Itens</td>
+            <td>@item.Valor_unitario</td>
+            <td>@item.Valor_total</td>
+        </tr>
+        }
+    </tbody> *@
+    </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+        Total
+      </a>
+      </div>
+      <div id="collapseFour" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          R$ 000,00
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- #region final Collapse--> 
+
+<div>
+  <br/>
+</div>
+ 
+<!-- #region Botão finalizar compra-->    
+<div class="form-group">
+     <input type="submit" value="Finalizar" class="btn btn-info btn-lg botao-finalizar" />
+</div>
+<!-- #region -->
+

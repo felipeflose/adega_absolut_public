@@ -1,0 +1,45 @@
+@model IEnumerable<AppWeb.Models.ProdutoViewModel>
+@{
+    ViewData["Title"] = "Listar produtos";
+}
+
+    <h2 style="margin-bottom: 20px">Produtos  <a type ="button"  href="~/Produtos/Criar"><img src="~/Gif/mais.png" style="width: 25px; margin-left: 940px; "></a></h2>
+
+    <hr />
+
+    <table class="table table-bordered">
+        <thead>
+            <tr class="cabeca-tabela">
+                <th scope="col">IdProduto</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Classificacao Idade</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Marca</th>
+
+                <th scope="col">Editar | Deletar</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="linha-tabela">
+                    <td>@item.IdProduto</td>
+                    <td>@item.nome_produto</td>
+                    <td>@item.valor</td>
+                    <td>@item.Classificacao_idade</td>
+                    <td>@item.categoria</td>
+                    <td>@item.marca</td>
+
+                    <td><a href="~/Produtos/Editar/@item.IdProduto" class="icones"> <img src="~/Gif/editar.png" style="width: 20px"> </a> | <a href="~/Produtos/Deletar/@item.IdProduto" class="icones"><img src="~/Gif/bin.png" style="width: 20px"></a></td>
+
+                </tr>
+            }
+        </tbody>
+
+
+
+    </table>
+
+

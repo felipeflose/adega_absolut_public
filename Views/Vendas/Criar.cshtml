@@ -1,0 +1,59 @@
+
+@model AppWeb.Models.VendasViewModel
+@{
+    ViewData["Title"] = "Criar produtos";
+}
+<h2 class="text-center">Criar Pedido</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Salvar" for="insert">
+            <input type="hidden" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+               
+                <label for="state_id" class="control-label">Selecione o produto</label>
+                <select class="form-control" style="width: 85%;" asp-for="IdProduto" asp-items="@(new SelectList(Model.produtos,"IdProduto","nome_produto"))">
+                    <option>Selecionar</option>              
+                </select>
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="IdCliente" class="control-label">Id Cliente</label>
+                <input type="text" asp-for="IdCliente" class="form-control" />
+                <span asp-validation-for="IdCliente" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="quantidade" class="control-label">Quantidade</label>
+                <input type="text" asp-for="quantidade" class="form-control" />
+                <span asp-validation-for="quantidade" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="tipo_pagamento" class="control-label">Tipo Pagamento</label>
+                <input type="text" asp-for="tipo_pagamento" class="form-control" />
+                <span asp-validation-for="tipo_pagamento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+
+
+                <div class="form-group">
+                    <input type="submit" value="Salvar" class="btn btn-primary" />
+                </div>
+        </form>
+    </div>   <!--Fim formulário -->
+
+
+
+
+
+
+</div>
+
+

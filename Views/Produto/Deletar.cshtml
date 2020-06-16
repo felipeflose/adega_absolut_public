@@ -1,0 +1,47 @@
+@model AppWeb.Models.ProdutoViewModel
+@{
+    ViewData["Title"] = "deletar produtos";
+}
+<h2 class="text-center">Deletar produtos</h2> 
+<hr />
+<div class="row">
+   <div class="col-md-4">
+        <form asp-action="Editar">
+             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+             <div class="form-group">
+
+                    <label asp-for="nome_produto" class="control-label"></label>
+                    <input type="text" asp-for="nome_produto" class="form-control" />
+                    <span asp-validation-for="nome_produto" class="text-danger"></span>
+             </div>
+
+             <div class="form-group">
+
+                  <label asp-for="valor" class="control-label"></label>
+                  <input type="text" asp-for="valor" class="form-control"/>
+                  <span asp-validation-for="valor" class="text-danger"></span>
+              </div>
+
+              <div class="form-group">
+
+                  <label asp-for="validade_produto" class="control-label"></label>
+                  <input type="text" asp-for="validade_produto" class="form-control"/>
+                  <span asp-validation-for="validade_produto" class="text-danger"></span>
+             </div>
+
+              <div class="form-group">
+
+                  <label asp-for="Classificacao_idade" class="control-label"></label>
+                  <input type="text" asp-for="Classificacao_idade" class="form-control"/>
+                  <span asp-validation-for="Classificacao_idade" class="text-danger"></span>
+             </div>
+
+              <div class="form-group">
+                    <input type="submit" value="Salvar" class="btn btn-primary" />
+              </div>
+        </form>
+   </div>   <!--Fim formulário -->
+</div>
+
+

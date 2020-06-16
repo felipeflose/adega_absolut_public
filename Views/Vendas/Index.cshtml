@@ -1,0 +1,39 @@
+@model IEnumerable<AppWeb.Models.VendasViewModel>
+@{
+    ViewData["Title"] = "Pedidos";
+}
+
+    <h2 style="margin-bottom: 20px;text-align: center;">Pedidos<a type ="button"  href="~/Vendas/Criar"><img src="~/Gif/mais.png" style="width: 25px; margin-left: 950px; "></a></h2>
+
+    <hr />
+
+    <table class="table table-bordered">
+        <thead>
+            <tr class="cabeca-tabela">
+                <th scope="col">Id Venda</th>
+                <th scope="col">Id Cliente</th>
+                <th scope="col">Nome Produto</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor Total do Pedido</th>
+                <th scope="col">Tipo Pagamento </th>
+                <th scope="col">Data Pedido </th>
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr class="linha-tabela">
+                <td>@item.id_Venda</td>
+                <td>@item.IdCliente</td>
+                <td>@item.nome_produto</td>
+                <td>@item.quantidade</td>
+                <td>@item.valortotal</td>
+                <td>@item.tipo_pagamento</td>
+                <td>@item.data_pedido</td>
+
+            </tr>
+            }
+        </tbody>

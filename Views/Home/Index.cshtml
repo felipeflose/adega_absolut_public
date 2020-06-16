@@ -1,0 +1,23 @@
+﻿@model IEnumerable<AppWeb.Models.MetricasController>
+@{
+    ViewData["Title"] = "Listar Clientes";
+}
+
+<h2> ADEGA </h2>
+
+
+
+
+  @if(Context.User.Identity.IsAuthenticated){
+                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">@Context.User.Identity.Name</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Login" asp-action="Logout" class="nav-link" >Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+        </nav>

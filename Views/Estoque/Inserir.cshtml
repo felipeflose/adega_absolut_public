@@ -1,0 +1,55 @@
+
+@model AppWeb.Models.EstoqueViewModel
+@{
+    ViewData["Title"] = "Adicionar volumes no estoque";
+}
+<h2 class="text-center">Adicionar volumes</h2> 
+<hr />
+<div class="row">
+   <div class="col-md-4">
+        <form  asp-controller= "Estoque" asp-action="Salvar" method="POST">
+               <input type = "hidden"asp-for = "IdEstoque"/>
+             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+             <div class="form-group">
+
+                    <label asp-for="IdProduto" class="control-label">Id Produto</label>
+                    <input type="text" asp-for="IdProduto" class="form-control" />
+                    <span asp-validation-for="IdProduto" class="text-danger"></span>
+
+                    
+             </div>
+
+           <div class="form-group">
+
+                    <label asp-for="quantidade" class="control-label">Quantidade</label>
+                    <input type="text" asp-for="quantidade" class="form-control" />
+                    <span asp-validation-for="quantidade" class="text-danger"></span>
+             </div>
+
+
+
+           <div class="form-group">
+
+                    <label asp-for="tipo_movimentacao" class="control-label">Tipo Movimentacao</label>
+                    <input type="text" asp-for="tipo_movimentacao" class="form-control" />
+                    <span asp-validation-for="tipo_movimentacao" class="text-danger"></span>
+             </div>
+
+    
+            <div class="form-group">
+             <input type="submit" value="Salvar" class="btn btn-primary" />   
+              </div>
+        </form>
+   </div>   <!--Fim formulário -->
+
+
+
+
+
+
+
+
+
+
